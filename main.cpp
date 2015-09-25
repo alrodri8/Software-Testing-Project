@@ -5,14 +5,14 @@
 //  Created by Humberto Salinas on 9/24/15.
 //  Copyright (c) 2015 _Humberto Salinas_. All rights reserved.
 //
+
 #include <iostream>
 #include <string>
 #include <list>
 #include <stdio.h>
-#include <sstream>
 #include <algorithm>
 #include <fstream>
-#include <sstream>
+
 
 using namespace std;
 
@@ -293,14 +293,6 @@ int main()
 {
 	int const MAX_STR = 9999;
 	list<Student> students;
-	string UID = "abc";
-
-	Student S1("abs", "abc@", "humberto", 0, 0, 0); //List of students
-
-	Student S2(UID, "abcd@", "hum", 0, 1, 2);
-
-	students.push_back(S1);
-	students.push_back(S2);
 
 	FILE* inFile = NULL;
 	inFile = fopen("student.txt", "r");
@@ -349,7 +341,7 @@ int main()
 		fgets(str, MAX_STR, inFile);	//Skip blank lines
 		fgets(str, MAX_STR, inFile);		
 	}
-
+	fclose(inFile);
 
 	int option; // Variable for storing selected option
 
@@ -361,7 +353,6 @@ int main()
 	cout << "4 - Update Student\n" << endl;
 
 	cin >> option;
-
 	do {
 		switch (option) {
 		case 0:
@@ -412,7 +403,7 @@ int main()
 	int totalStudent = 0;
 	for (list<Student>::iterator count1 = students.begin(); count1 != students.end(); ++count1)
 		++totalStudent;
-	ofstream out("students.txt");
+	ofstream out("student.txt");
 	out << totalStudent;
 	out << '\n';
 	for (list<Student>::iterator sPtr = students.begin(); sPtr != students.end(); ++sPtr)
