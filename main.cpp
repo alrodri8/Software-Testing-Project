@@ -343,6 +343,7 @@ int main()
 		fgets(str, MAX_STR, inFile);
 		sscanf(str, "%d", &finalGrade);
 
+		// Check for length of student name, UID, and email.
 		add_student_from_file(students, tempId, tempEmail, tempName, tempEssay1, tempEssay2, finalGrade);
 		count--;
 		fgets(str, MAX_STR, inFile);	//Skip blank lines
