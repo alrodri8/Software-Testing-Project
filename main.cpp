@@ -156,12 +156,19 @@ void add_student(list<Student>& students)
 	string empty = "";
 	getline(cin, empty);
 
+	// Name should be up to 40 characters 
+	//possibly a loop that responds with incorrect input, and prompts for correct input
+	// such as while (name.length <= 40)
 	cout << "Enter Name: ";
 	getline(cin, name);
 
+	// USF ID has to be 10 characters
+	// possibly a loop that prompts incorrect input, and prompts for correct input
+	// such as while(name.length == 10in length )
 	cout << "Enter UID: ";
 	getline(cin, UID);
-
+	
+	// EMail has to be up to 40 characters, same as name.
 	cout << "Enter Email: ";
 	getline(cin, email);
 
